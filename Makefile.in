@@ -115,7 +115,7 @@ SUBDIRS = gdk-pixbuf demo doc
 
 bin_SCRIPTS = gdk-pixbuf-config
 
-confexecdir = $(libdir)
+confexecdir = $(pkgdatadir)
 confexec_DATA = \
 	gdk_pixbufConf.sh		\
 	gdk_pixbuf_xlibConf.sh		\
