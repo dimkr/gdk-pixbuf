@@ -44,7 +44,7 @@ while test $# -gt 0; do
       ;;
     --libs)
       libdirs=-L@libdir@
-      echo $libdirs -lgdk_pixbuf `gtk-config --libs`
+      echo $libdirs -lgdk_pixbuf @STATIC_LIB_DEPS@ `gtk-config --libs`
       ;;
     *)
       echo "${usage}" 1>&2
