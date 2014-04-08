@@ -156,7 +156,7 @@ install-data-local:
 	  done; \
 	fi)
 #	  echo '-- Installing $(srcdir)/html/index.sgml' ; \
-#	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR); \
+#	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR);
 
 #
 # Require gtk-doc when making dist

@@ -18,7 +18,7 @@ lib_LTLIBRARIES = 		\
 
 libgnomecanvaspixbuf_la_LDFLAGS = -version-info 1:0:0 $(EXTRA_GNOME_LIBS)
 
-libexecdir = $(libdir)/gdk-pixbuf/loaders
+loaderdir = $(libdir)/gdk-pixbuf/loaders
 
 #
 # The PNG plugin.
@@ -118,7 +118,7 @@ XBM_LIB = libpixbufloader-xbm.la
 
 if BUILD_DYNAMIC_MODULES
 
-libexec_LTLIBRARIES = 	\
+loader_LTLIBRARIES = 	\
 	$(PNG_LIB)	\
 	$(JPEG_LIB)	\
 	$(GIF_LIB)	\
@@ -134,7 +134,7 @@ libexec_LTLIBRARIES = 	\
 extra_sources = 
 
 else
-libexec_LTLIBRARIES = 
+loader_LTLIBRARIES = 
 
 extra_sources = $(libpixbufloader_png_la_SOURCES) 	\
 		$(libpixbufloader_jpeg_la_SOURCES) 	\
@@ -159,7 +159,7 @@ INCLUDES = -I$(top_srcdir) -I$(top_builddir) \
 	-I$(top_builddir)/gdk-pixbuf \
 	$(X11_CFLAGS) $(GLIB_CFLAGS) $(GTK_CFLAGS) $(GNOME_CFLAGS)
 
-AM_CPPFLAGS = "-DPIXBUF_LIBDIR=\"$(libexecdir)\""
+AM_CPPFLAGS = "-DPIXBUF_LIBDIR=\"$(loaderdir)\""
 
 LDADDS = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
 
@@ -211,7 +211,7 @@ libgdk_pixbuf_xlib_la_SOURCES =		\
 	gdk-pixbuf-parse-color.c	\
 	$(extra_sources)
 
-libgdk_pixbuf_xlib_la_LDFLAGS = -version-info 2:0:0 -export-dynamic $(GLIB_LIBS) $(X11_LIBS)
+libgdk_pixbuf_xlib_la_LDFLAGS = -version-info 2:0:0 -export-dynamic $(GLIB_LIBS)
 libgdk_pixbuf_xlib_la_LIBADD = pixops/libpixops.la libgdk_pixbuf.la $(GTK_LIBS)
 
 

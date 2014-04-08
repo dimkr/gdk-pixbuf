@@ -28,6 +28,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdlib.h>
 #include "gdk-pixbuf-private.h"
 #include "gdk-pixbuf-io.h"
 
